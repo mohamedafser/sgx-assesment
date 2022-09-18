@@ -8,7 +8,7 @@ Get the source code from github (https://github.com/mohamedafser/sgx-assesment.g
 `git clone https://github.com/mohamedafser/sgx-assesment.git`
 
 # Begin front-end application with 
-`cd #path` 
+`cd root folder of application` 
 
 `npm install`
         
