@@ -8,12 +8,18 @@
 *
 **/
 
+// EXPERSS IMPORT 
 const express = require("express");
+// NODE MAILER IMPORT
 const nodemailer = require("nodemailer");
+// CROSS ORIGIN IMPORT
 var cors = require('cors');
+// INITIATE EXPRESS
 const app = express();
+// ENV CONFIG
 require("dotenv").config();
 
+// INITIALIZING NODE MAILER
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -26,17 +32,24 @@ let transporter = nodemailer.createTransport({
     },
 });
 
+// VERIFY NODE MAILER
 transporter.verify((err, success) => {
     err
         ? console.log(err)
         : console.log(`=== Server is ready to take messages: ${success} ===`);
 });
+
+// USE BODY PARSE EXPRESS
 app.use(express.json());
 
+// USE CROSS ORIGIN
 app.use(cors());
 
+// CREATE SEND EMAIL REST API 
 app.post("/send-mail", function (req, res) {
+    // EMAIL REQUEST BODY
     const { email,first_name, last_name, description } = req.body;
+    // EMAIL OPTIONS
     let mailOptions = {
       from: process.env.EMAIL,
       to: email,
@@ -79,18 +92,24 @@ app.post("/send-mail", function (req, res) {
       </html>`,
     };
    
+    // SEND EMAIL
     transporter.sendMail(mailOptions, function (err, data) {
-        let response = {...req.body}
+      let response = {...req.body}
+      // IF ERROR IN SEND MAIL
       if (err) {
         res.send({...response, status: "error"});
-      } else {
+      }
+      // IF EMAIL SEND SUCCESSFULLY
+      else {
         res.send({...response, status: "success"});
       }
     });
 });
 
+// APPLICATION PORT
 const port = 3001;
 
+// APPLICATION LISTENER
 app.listen(port, () => {
  console.log(`Server is running on port: ${port}`);
 });
