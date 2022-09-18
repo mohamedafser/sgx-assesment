@@ -8,9 +8,11 @@
 *
 **/
 
+import { DOMAIN, SEND_EMAIL_API } from "../../utils/constants";
+
 // SEND EMAIL API FUNCTION
 export const sendEmail = async (data) => {
-    const response = await fetch("http://localhost:3001/send-mail", {
+    const response = await fetch(`${DOMAIN}${SEND_EMAIL_API}`, {
      method: "POST",
      headers: {
        "Content-type": "application/json",
