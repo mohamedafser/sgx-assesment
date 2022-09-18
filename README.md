@@ -1,7 +1,7 @@
 # About Application
 This project allows us to create an account and preview photos. When the user submits the form, an email with the submitted data is sent to them. All user inputs are thoroughly validated, such as firstname and lastname, which are validated to allow only alphabets and spaces, and the email field, which is validated for the correct email format. The description field can contain any number of characters and symbols. Only images can be uploaded as files.
 
-# How to install n run the application
+# How to install & run the application
 
 Get the source code from github (https://github.com/mohamedafser/sgx-assesment.git). Alternatively, you can run the following commands in your terminal: 
 
