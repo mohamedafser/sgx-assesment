@@ -10,39 +10,27 @@
 
 // REACT IMPORT
 import React from 'react'
-// BUTTON IMPORT FROM ATOMS
-import { Button } from '../../atoms/Button';
 // STYLES IMPORT
 import {
     ErrorGrid,
     ErrorMainWrapper,
-    Image,
-    Info,
-    LinkButton,
-    Title
 } from './style';
-// ROUTER PATH CONSTANT IMPORT
-import * as routerPath from '../routes/constants';
+// EMPTY SCREEN COMPONENT IMPORT
+import { EmptyScreen } from '../../molecules/emptyScreen';
+// ERROR IMAGE IMPORT
+import errorImg from '../../../assets/img/404.jpeg';
 
 // ERROR COMPONENT
-export function Error(props) {
-    // ERROR COMPONENT PROPERTIES
-    const { 
-        imageUrl,
-        title,
-        info,
-        buttonUrl = routerPath.HOME_PAGE_PATH,
-        buttonLabel = "Back To Home"
-    } = props;
-
+export function ErrorPage() {   
     // RENDER HTML
     return (
         <ErrorMainWrapper>
             <ErrorGrid container alignContent={'center'} justifyContent={'center'} direction="column">
-                <Image src={imageUrl} alt="404"/>
-                <Title variant='h2' align='center'>{title}</Title>
-                {info && <Info variant='body1' align='center'>{info}</Info>}
-                {buttonLabel && <LinkButton to={buttonUrl}><Button>{buttonLabel}</Button></LinkButton> }
+                <EmptyScreen 
+                    imageUrl={errorImg}
+                    title="Page Not Found"
+                    info={`We are sorry but the page you are looking for does not exists. \n You could return to the home page by clicking the below button.`}
+                />
             </ErrorGrid>
         </ErrorMainWrapper>
     ) 

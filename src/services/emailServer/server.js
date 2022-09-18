@@ -1,3 +1,13 @@
+/** 
+*
+* server.js
+* this file which hold entry point of the email server and backend
+*
+* @author - Mohamed Afser
+* @date - 18 September 2022
+*
+**/
+
 const express = require("express");
 const nodemailer = require("nodemailer");
 var cors = require('cors');

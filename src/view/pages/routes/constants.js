@@ -8,4 +8,4 @@
 *
 **/
 export const HOME_PAGE_PATH = '/';
-export const PAGE_NOT_FOUND_PATH = '*'
+export const PAGE_NOT_FOUND_PATH = '*';

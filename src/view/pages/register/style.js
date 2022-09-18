@@ -11,7 +11,7 @@
 import styled from "@emotion/styled";
 // MATERIAL UI COMPONENT IMPORT
 import { Grid, IconButton, TextField, Typography } from "@mui/material";
-import { Button } from "../../atoms/Button";
+import { Button } from "../../atoms/button";
 
 // CONSTANT
 export const WelcomeInfo =  styled(Grid)`
